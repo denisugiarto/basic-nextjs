@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout';
+import Layout from "../../components/Layout";
 
 interface User {
   id: number;
@@ -15,7 +15,7 @@ interface UserDetailProps {
 export default function UserDetail(props: UserDetailProps) {
   const { user } = props;
   return (
-    <Layout pageTitle="User Details">
+    <Layout pageTitle='User Details'>
       <p>{user.name}</p>
       <p>{user.email}</p>
       <p>{user.phone}</p>
@@ -25,7 +25,7 @@ export default function UserDetail(props: UserDetailProps) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/');
+  const res = await fetch("https://jsonplaceholder.typicode.com/users/");
   const dataUsers = await res.json();
 
   const paths = dataUsers.map((user: User) => ({

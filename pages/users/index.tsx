@@ -10,21 +10,19 @@ export default function Users(props: UsersProps) {
   const { dataUsers } = props;
   const router = useRouter();
   return (
-    <Layout pageTitle="Users Page">
+    <Layout pageTitle='Users Page'>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           flexWrap: "wrap",
-        }}
-      >
+        }}>
         {dataUsers.map((user) => {
           return (
             <div
               key={user.id}
               onClick={() => router.push(`/users/${user.id}`)}
-              className={styles.card}
-            >
+              className={styles.card}>
               <p>{user.name}</p>
               <p>{user.email}</p>
             </div>
